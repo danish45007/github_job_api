@@ -10,7 +10,7 @@ const App  = () => {
   const [page,setPage] = useState(1)
   const { jobs,loading,error } = useFetchJobs(params,page)
   return (
-    <Container>
+    <Container className="my-5">
       {loading && <Loader 
         className="d-flex align-items-center justify-content-center mt-5"
         type="Circles"
@@ -21,6 +21,7 @@ const App  = () => {
 
      />}
       {error && <h1>Error....</h1>}
+      <h1 style={{fontFamily:'Anton'}} className="d-flex align-items-center justify-content-center">GitHub Jobs</h1>
       {jobs.map(job => {
         return <Job key={job.id} job={job}></Job>
       })}
